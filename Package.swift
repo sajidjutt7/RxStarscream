@@ -4,26 +4,29 @@ import PackageDescription
 let package = Package(
     name: "RxStarscream",
     platforms: [
-        .iOS(.v11) // Minimum iOS version
+        .iOS(.v12), // Minimum iOS version
+        .macOS(.v10_15)
     ],
     products: [
-        // This defines the library product for other projects to import
         .library(
             name: "RxStarscream",
             targets: ["RxStarscream"]
         )
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        // Add RxSwift and Starscream dependencies
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "4.5.0"),
+        .package(url: "https://github.com/daltoniam/Starscream.git", from: "3.1.1")
     ],
     targets: [
-        // The main target for your source files
         .target(
             name: "RxStarscream",
-            path: "Sources/RxStarscream" // Path to your source files
+            dependencies: [
+                .product(name: "RxSwift", package: "RxSwift"),
+                .product(name: "Starscream", package: "Starscream")
+            ],
+            path: "Sources/RxStarscream"
         ),
-        // Test target (optional, but recommended)
         .testTarget(
             name: "RxStarscreamTests",
             dependencies: ["RxStarscream"],
