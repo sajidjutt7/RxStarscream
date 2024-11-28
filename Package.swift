@@ -1,28 +1,33 @@
 // swift-tools-version: 5.7
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
     name: "RxStarscream",
+    platforms: [
+        .iOS(.v11) // Minimum iOS version
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
+        // This defines the library product for other projects to import
         .library(
             name: "RxStarscream",
-            targets: ["RxStarscream"]),
+            targets: ["RxStarscream"]
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        // The main target for your source files
         .target(
             name: "RxStarscream",
-            dependencies: []),
+            path: "Sources/RxStarscream" // Path to your source files
+        ),
+        // Test target (optional, but recommended)
         .testTarget(
             name: "RxStarscreamTests",
-            dependencies: ["RxStarscream"]),
+            dependencies: ["RxStarscream"],
+            path: "Tests/RxStarscreamTests"
+        )
     ]
 )
