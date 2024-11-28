@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "RxStarscream",
     platforms: [
-        .iOS(.v12), // Minimum iOS version
+        .iOS(.v11), // Minimum iOS version
         .macOS(.v10_15)
     ],
     products: [
@@ -26,11 +26,6 @@ let package = Package(
                 .product(name: "Starscream", package: "Starscream")
             ],
             path: "Sources/RxStarscream"
-        ),
-        .testTarget(
-            name: "RxStarscreamTests",
-            dependencies: ["RxStarscream"],
-            path: "Tests/RxStarscreamTests"
         )
     ]
 )

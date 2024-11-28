@@ -14,14 +14,7 @@ A lightweight extension to [Starscream](https://github.com/daltoniam/Starscream)
 
 ### CocoaPods
 
-RxStarscream is available through [CocoaPods](http://cocoapods.org/).
-Add the following line to your `Podfile`:
-
-	pod 'RxStarscream'
-
-Then run:
-
-	pod install
+RxStarscream is available through [SPM](https://github.com/sajidjutt7/RxStarscream/).
 
 ### RxStarscream version vs Swift version.
 
@@ -34,19 +27,9 @@ your Swift version.
 | < 4.2  |  \>= 0.8      |  \>= 4.0      |
 | 3.X    |  0.7          | 3.0.0 - 3.6.1 |
 
-### Carthage
-
-Add this to your Cartfile
-
-	github "RxSwiftCommunity/RxStarscream"
-
-Then run:
-
-	carthage update
-
 ## Usage examples
 
-After installing via CococPods or Carthage, you should import the framework.
+After installing via SPM, you should import the framework.
 
 ```swift
 import RxStarscream
